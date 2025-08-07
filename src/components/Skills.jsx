@@ -24,30 +24,30 @@ const Skills = () => {
     {
       title: 'Frontend',
       skills: [
-        { name: 'HTML5', icon: FaHtml5, color: '#E34F26', level: 90 },
-        { name: 'CSS3', icon: FaCss3Alt, color: '#1572B6', level: 85 },
+        { name: 'HTML5', icon: FaHtml5, color: '#E34F26', level: 95 },
+        { name: 'CSS3', icon: FaCss3Alt, color: '#1572B6', level: 90 },
         { name: 'JavaScript', icon: FaJs, color: '#F7DF1E', level: 88 },
-        { name: 'React.js', icon: FaReact, color: '#61DAFB', level: 85 },
+        { name: 'React.js', icon: FaReact, color: '#61DAFB', level: 95 },
         { name: 'Tailwind CSS', icon: SiTailwindcss, color: '#06B6D4', level: 90 },
-        { name: 'Bootstrap', icon: FaBootstrap, color: '#7952B3', level: 80 },
-        { name: 'Redux', icon: SiRedux, color: '#764ABC', level: 75 },
+        { name: 'Bootstrap', icon: FaBootstrap, color: '#7952B3', level: 90 },
+        { name: 'Redux', icon: SiRedux, color: '#764ABC', level: 85 },
       ]
     },
     {
       title: 'Backend',
       skills: [
-        { name: 'Node.js', icon: FaNodeJs, color: '#339933', level: 80 },
-        { name: 'Express.js', icon: SiExpress, color: '#000000', level: 78 },
-        { name: 'MongoDB', icon: SiMongodb, color: '#47A248', level: 82 },
-        { name: 'Firebase', icon: SiFirebase, color: '#FFCA28', level: 75 },
+        { name: 'Node.js', icon: FaNodeJs, color: '#339933', level: 90 },
+        { name: 'Express.js', icon: SiExpress, color: '#000000', level: 95 },
+        { name: 'MongoDB', icon: SiMongodb, color: '#47A248', level: 90 },
+        { name: 'Firebase', icon: SiFirebase, color: '#FFCA28', level: 85 },
       ]
     },
     {
       title: 'Tools & Others',
       skills: [
-        { name: 'Git', icon: FaGitAlt, color: '#F05032', level: 85 },
-        { name: 'GitHub', icon: FaGithub, color: '#181717', level: 85 },
-        { name: 'Figma', icon: FaFigma, color: '#F24E1E', level: 70 },
+        { name: 'Git', icon: FaGitAlt, color: '#F05032', level: 90 },
+        { name: 'GitHub', icon: FaGithub, color: '#181717', level: 95 },
+        { name: 'Figma', icon: FaFigma, color: '#F24E1E', level: 90 },
       ]
     }
   ];
