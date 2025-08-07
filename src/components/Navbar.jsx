@@ -25,12 +25,16 @@ const Navbar = () => {
   ];
 
   const scrollToSection = (href) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+  const element = document.querySelector(href);
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' });
+  }
+  if (window.innerWidth < 768) {
+    setTimeout(() => setIsMobileMenuOpen(false), 400);
+  } else {
     setIsMobileMenuOpen(false);
-  };
+  }
+};
 
   return (
     <motion.nav

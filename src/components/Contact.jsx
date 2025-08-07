@@ -42,19 +42,24 @@ const Contact = () => {
   const contactInfo = [{
     icon: FiMail,
     label: 'Email',
-    value: 'salik@gmail.com',
-    href: 'mailto:salik@gmail.com'
+    value: 'saliksidd40@gmail.com',
   }, {
-    icon: FiGithub,
-    label: 'GitHub',
-    value: 'salikgithub.com',
-    href: '#'
+    icon: FiPhone,
+    label: 'Watsapp No.',
+    value: '+91 9119022466',
   }, {
-    icon: FiLinkedin,
-    label: 'LinkedIn',
-    value: 'saliklinkdIn.com',
-    href: '#'
+    icon: FiMapPin,
+    label: 'Location',
+    value: 'Meerut, UttarPradesh',
   }];
+
+  const socialLinks = [
+      { icon: FiGithub, href: 'https://github.com/saliksiddiqui', label: 'GitHub' },
+      { icon: FiLinkedin, href: 'https://www.linkedin.com/in/salik-siddiqui-491049309/', label: 'LinkedIn' },
+      { icon: FiMail,     href: 'mailto:saliksidd40@gmail.com', label: 'Email' },
+    ];
+
+
   const containerVariants = {
     hidden: {
       opacity: 0
@@ -171,14 +176,12 @@ const Contact = () => {
                 Get in touch
               </h3>
               <p className="text-muted-foreground leading-relaxed mb-8">
-                I'm always open to discussing new opportunities, creative projects, 
-                or potential collaborations. Feel free to reach out through any of 
-                the channels below.
+                
               </p>
             </motion.div>
 
-            <motion.div variants={itemVariants} className="space-y-6">
-              {contactInfo.map((contact, index) => <motion.a key={contact.label} href={contact.href} whileHover={{
+            <motion.div variants={itemVariants} className="space-y-10">
+              {contactInfo.map((contact, index) => <motion.a key={contact.label} whileHover={{
               scale: 1.05,
               x: 10
             }} className="flex items-center space-x-4 p-4 bg-card border border-border rounded-xl hover:border-primary transition-all duration-300 group">
@@ -192,11 +195,27 @@ const Contact = () => {
                     </div>
                   </div>
                 </motion.a>)}
+
+                
             </motion.div>
 
-            {/* Additional Info */}
+            <div className="flex sm:gap-28">
+                          {socialLinks.map((social, index) => (
+                            <motion.a
+                              key={social.label}
+                              href={social.href}
+                              whileHover={{ scale: 1.2, y: -3 }}
+                              whileTap={{ scale: 0.9 }}
+                              className="p-2 rounded-full bg-primary/10 hover:bg-primary hover:text-primary-foreground transition-colors duration-300 text-primary mx-auto mt-6"
+                              aria-label={social.label}
+                            >
+                              <social.icon className="w-12 h-12" />
+                            </motion.a>
+                          ))}
+                        </div>
             
           </motion.div>
+          
         </div>
       </div>
     </section>;

@@ -91,8 +91,8 @@ const Hero = () => {
         }} transition={{
           delay: 0.6,
           duration: 0.8
-        }} className="text-3xl md:text-5xl lg:text-6xl font-semibold text-foreground">
-            Full-Stack MERN Developer
+        }} className="text-3xl md:text-5xl lg:text-6xl font-semibold text-foreground animate-bounce-gentle">
+            Full-Stack Developer
           </motion.h2>
 
           {/* Tagline */}
@@ -120,7 +120,7 @@ const Hero = () => {
         }} transition={{
           delay: 1,
           duration: 0.8
-        }} className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-8">
+        }} className="flex flex-col sm:flex-row gap-6 justify-center items-center pb-8">
             <motion.button whileHover={{
             scale: 1.05,
             boxShadow: '0 20px 60px hsl(var(--primary) / 0.4)',

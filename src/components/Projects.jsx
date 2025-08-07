@@ -1,6 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FiExternalLink, FiGithub, FiMessageCircle, FiShoppingCart, FiTrendingUp, FiCloud } from 'react-icons/fi';
+import chatApp from '../../public/chatapp.png'
+import ecommerse from '../../public/E-Commerce.jpg'
+import expense from '../../public/expense.png'
+import weather from '../../public/weather.png'
+
 
 const Projects = () => {
   const projects = [
@@ -8,44 +13,44 @@ const Projects = () => {
       id: 1,
       title: 'Real-Time Chat App',
       description: 'A modern real-time chat application built with React.js and Firebase. Features include instant messaging, user authentication, and responsive design.',
-      image: '/api/placeholder/400/250',
-      tech: ['React.js', 'Firebase', 'CSS3', 'JavaScript'],
+      image: chatApp,
+      tech: ['React.js', 'Firebase', 'CSS 3'],
       icon: FiMessageCircle,
-      github: '#',
-      demo: '#',
+      github: 'https://github.com/saliksiddiqui/Real-Time-Chat-App',
+      demo: 'https://jocular-selkie-287dff.netlify.app/login',
       color: 'from-blue-500 to-purple-600'
     },
     {
       id: 2,
       title: 'E-commerce Web Page',
-      description: 'A fully responsive e-commerce landing page with modern design, product showcases, and interactive elements built with HTML, CSS, and JavaScript.',
-      image: '/api/placeholder/400/250',
-      tech: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap'],
+      description: 'A fully responsive e-commerce landing page with modern design, product showcases, and interactive elements built with react.js and css.',
+      image: ecommerse,
+      tech: ['React.js', 'CSS 3'],
       icon: FiShoppingCart,
-      github: '#',
-      demo: '#',
+      github: 'https://github.com/saliksiddiqui/ECommerse-website',
+      demo: 'https://ecommerce0436.netlify.app/',
       color: 'from-green-500 to-teal-600'
     },
     {
       id: 3,
       title: 'Expense Tracker',
       description: 'A comprehensive expense tracking application that helps users manage their finances with categorization, charts, and budget planning features.',
-      image: '/api/placeholder/400/250',
-      tech: ['React.js', 'Node.js', 'MongoDB', 'Express.js'],
+      image: expense,
+      tech: ['React.js', 'CSS 3'],
       icon: FiTrendingUp,
-      github: '#',
-      demo: '#',
+      github: 'https://github.com/saliksiddiqui/ExpenseTraker',
+      demo: 'https://expensetracker234.netlify.app/',
       color: 'from-orange-500 to-red-600'
     },
     {
       id: 4,
       title: 'Live Weather App',
       description: 'A dynamic weather application that provides real-time weather information with beautiful UI, location-based forecasts, and weather animations.',
-      image: '/api/placeholder/400/250',
-      tech: ['React.js', 'Weather API', 'Tailwind CSS', 'JavaScript'],
+      image: weather,
+      tech: ['React.js', 'Weather API', 'CSS 3'],
       icon: FiCloud,
-      github: '#',
-      demo: '#',
+      github: 'https://github.com/saliksiddiqui/Weather-Api',
+      demo: 'https://weatherapp343.netlify.app/',
       color: 'from-cyan-500 to-blue-600'
     }
   ];
@@ -84,7 +89,7 @@ const Projects = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-6">
-            Featured Projects
+            Projects
           </h2>
           <div className="w-24 h-1 bg-primary mx-auto rounded-full mb-6" />
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -107,18 +112,19 @@ const Projects = () => {
               className="project-card group"
             >
               {/* Project Image/Icon */}
-              <div className="relative overflow-hidden rounded-t-xl bg-gradient-to-br from-primary/20 to-primary-glow/20 h-48 flex items-center justify-center">
-                <div className={`w-full h-full bg-gradient-to-br ${project.color} opacity-10 absolute inset-0`}></div>
+              <div className="relative overflow-hidden rounded-t-xl bg-gradient-to-br from-primary/20 to-primary-glow/20 h-40 flex items-center justify-center">
+                <div className={`w-full h-full bg-gradient-to-br absolute inset-0`}></div>
                 <motion.div
-                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  whileHover={{ scale: 1.1}}
                   transition={{ duration: 0.3 }}
                   className="relative z-10"
                 >
-                  <project.icon className="w-16 h-16 text-primary group-hover:text-white transition-colors duration-300" />
+                  <img src={project.image} alt="image" />
                 </motion.div>
                 
                 {/* Overlay on hover */}
                 <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center space-y-3">
+
                   <motion.a
                     href={project.github}
                     whileHover={{ scale: 1.1, y: -2 }}
@@ -139,6 +145,7 @@ const Projects = () => {
                   </motion.a>
                 </div>
               </div>
+
 
               {/* Project Content */}
               <div className="p-6 space-y-4">

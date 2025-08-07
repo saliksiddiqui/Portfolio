@@ -1,13 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FiCalendar, FiTrendingUp, FiUsers, FiCode } from 'react-icons/fi';
+import me from "../../public/me.png"
 
 const About = () => {
   const stats = [
     { icon: FiCalendar, label: 'Experience', value: '1+', suffix: 'Year' },
     { icon: FiCode, label: 'Projects', value: '4+', suffix: 'Completed' },
     { icon: FiTrendingUp, label: 'Skills', value: '12+', suffix: 'Technologies' },
-    { icon: FiUsers, label: 'Education', value: 'BCA', suffix: '2nd Year' },
+    { icon: FiUsers, label: 'Education', value: 'BCA', suffix: '3nd Year' },
   ];
 
   const containerVariants = {
@@ -67,7 +68,7 @@ const About = () => {
             <div className="relative w-80 h-80 mx-auto">
               {/* Placeholder for profile image */}
               <div className="w-full h-full rounded-2xl bg-gradient-to-br from-primary to-primary-glow flex items-center justify-center text-white text-6xl font-bold shadow-2xl">
-                S
+                <img className='w-full h-full rounded-2xl' src={me} alt="myimg" />
               </div>
               
               {/* Floating elements */}
@@ -90,7 +91,7 @@ const About = () => {
               </h3>
               
               <p className="text-lg text-muted-foreground leading-relaxed">
-                I'm Salik, a BCA 2nd-year student at Translam College of Education. I am passionate about 
+                I'm Salik, a BCA 3nd-year student at Translam College of Education. I am passionate about 
                 full-stack web development and skilled in HTML, CSS, JavaScript, Tailwind CSS, React.js, 
                 Node.js, Express.js, MongoDB, and Git.
               </p>
@@ -124,9 +125,7 @@ const About = () => {
                   <div className="text-sm text-muted-foreground">
                     {stat.suffix}
                   </div>
-                  <div className="text-xs text-muted-foreground mt-1">
-                    {stat.label}
-                  </div>
+                  
                 </motion.div>
               ))}
             </motion.div>
