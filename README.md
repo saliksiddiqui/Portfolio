@@ -14,4 +14,4 @@ A modern, responsive developer portfolio built with **React.js**, **Vite**, **Ta
 ## Tech Stack
 - React.js, Vite, Tailwind CSS
 
-_Made by Salik with React & Tailwind CSS_
+_Made by Salik with React & Tailwind CSS__
