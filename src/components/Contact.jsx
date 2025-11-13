@@ -16,29 +16,37 @@ const Contact = () => {
       [e.target.name]: e.target.value
     });
   };
-  const handleSubmit = async e => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    try {
-      // You would configure EmailJS with your actual service ID, template ID, and user ID
-      // For demo purposes, we'll simulate the email sending
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      console.log('Form submitted:', formData);
-      setIsSubmitted(true);
-      setFormData({
-        name: '',
-        email: '',
-        message: ''
-      });
-      setTimeout(() => {
-        setIsSubmitted(false);
-      }, 3000);
-    } catch (error) {
-      console.error('Error sending email:', error);
-    } finally {
-      setIsSubmitting(false);
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+  setIsSubmitting(true);
+
+  try {
+    const res = await fetch('/.netlify/functions/send-email', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    });
+
+    const data = await res.json().catch(() => ({}));
+
+    if (!res.ok) {
+      console.error('Send failed:', data);
+      throw new Error(data.error || 'Send failed');
     }
-  };
+
+    setIsSubmitted(true);
+    setFormData({ name: '', email: '', message: '' });
+    setTimeout(() => setIsSubmitted(false), 3000);
+  } catch (error) {
+    console.error('Error sending message:', error);
+    alert('Something went wrong while sending your message. Please try again later.');
+  } finally {
+    setIsSubmitting(false);
+  }
+};
+
   const contactInfo = [{
     icon: FiMail,
     label: 'Email',
